@@ -23,9 +23,8 @@ class test_basemodel(unittest.TestCase):
 
     def tearDown(self):
         try:
-            os.remove('file.json')
-        except:
-            pass
+            os.remove 'file.json'
+        except pass
 
     def test_default(self):
         """ """
@@ -102,7 +101,7 @@ class test_basemodel(unittest.TestCase):
         time.sleep(1)
         new.save()
 
-        #print(f"after save: {new.updated_at}")
+        # print(f"after save: {new.updated_at}")
         n = new.to_dict()
         new = BaseModel(**n)
         self.assertFalse(new.created_at == new.updated_at)
