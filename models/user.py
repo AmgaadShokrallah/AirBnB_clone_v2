@@ -6,7 +6,17 @@ from sqlalchemy.orm import relationship
 
 
 class User(BaseModel, Base):
-    """define the class for user"""
+    """define the class for user.
+
+    Attributes:
+        __tablename__ (str): The name of users.
+        email: (sqlalchemy String): email for users.
+        password (sqlalchemy String): password for users.
+        first_name (sqlalchemy String): user's first name.
+        last_name (sqlalchemy String): user's last name.
+        places (sqlalchemy relationship): User-Place relationship.
+        reviews (sqlalchemy relationship): User-Review relationship.
+    """
     __tablename__ = "users"
     email = Column(String(128), nullable=False)
     password = Column(String(128), nullable=False)
